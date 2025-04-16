@@ -99,3 +99,10 @@ This project is open source and available under the MIT License.
 ---
 
 Would you like me to generate a small `LICENSE` file too (MIT style)?
+
+## Demo Video
+
+https://github.com/user-attachments/assets/fb46a314-1778-45e8-ae56-68ad0a39a695
+
+
+
