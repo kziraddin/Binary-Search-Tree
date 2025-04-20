@@ -96,9 +96,6 @@ Built by [Ziraddin (Z)] — feel free to fork, improve, or reach out!
 
 This project is open source and available under the MIT License.
 
----
-
-Would you like me to generate a small `LICENSE` file too (MIT style)?
 
 ## Demo Video
 
