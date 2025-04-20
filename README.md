@@ -6,7 +6,7 @@ and **graphical rendering using Graphviz**. It includes fundamental tree travers
 ---
 
 ## 🚀 Features
-### 🧠 Binary Search Tree (BST) implementation with basic operations:
+#### 🧠 Binary Search Tree (BST) implementation with basic operations:
 - Insert
 - Search
 - Remove
@@ -37,11 +37,11 @@ sudo apt-get install graphviz
 **Windows**
 Download from: https://graphviz.org/download/
 
-### Install Python package:
+#### Install Python package:
 ```bash
 pip3 install graphviz
 ```
-### 💻 How to Run
+#### 💻 How to Run
 ```bash
 python3 binarySearchTree.py
 ```
@@ -59,7 +59,7 @@ python3 binarySearchTree.py
 
 ### 🧠 Concepts Used
 #### Binary Search Tree:
--Insert, Search, Remove operations
+- Insert, Search, Remove operations
 #### Tree Traversals:
 - Depth-First Search (Inorder, Preorder, Postorder)
 - Breadth-First Search with level-specific suffixes (1st, 2nd, etc.)
@@ -88,17 +88,13 @@ python3 binarySearchTree.py
 - 🔍 Enhance visual rendering (e.g., with colors or labels)
 - 📈 Optimize traversal algorithms for larger datasets
 
-### 👨‍💻 Author
-
+## 👨‍💻 Author
 Built by [Ziraddin (Z)] — feel free to fork, improve, or reach out!
 
-### 📝 License
-
+## 📝 License
 This project is open source and available under the MIT License.
 
-
 ## Demo Video
-
 https://github.com/user-attachments/assets/fb46a314-1778-45e8-ae56-68ad0a39a695
 
 
