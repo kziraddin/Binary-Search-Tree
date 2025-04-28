@@ -43,7 +43,7 @@ pip3 install graphviz
 ```
 #### 💻 How to Run
 ```bash
-python3 binarySearchTree.py
+python3 file_name.py > (binarySearchTree8.py)
 ```
 
 #### Then follow the CLI prompts to:
@@ -95,7 +95,8 @@ Built by [Ziraddin (Z)] — feel free to fork, improve, or reach out!
 This project is open source and available under the MIT License.
 
 ## Demo Video
-https://github.com/user-attachments/assets/fb46a314-1778-45e8-ae56-68ad0a39a695
+https://github.com/user-attachments/assets/ab48b217-5503-4be1-8f0a-85408fff74cc
+
 
 
 
