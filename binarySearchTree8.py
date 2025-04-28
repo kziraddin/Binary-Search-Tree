@@ -278,66 +278,109 @@ def main():
     Usage:
     Run the script and follow the on-screen menu options.
     """
+    tree = VisualBST()
+
     while True:
-        print("\nChoose an option:")
-        print("1. Insert a value")
-        print("2. Search a value")
-        print("3. Remove a value")
-        print("4. Inorder traversal")
-        print("5. Preorder traversal")
-        print("6. Postorder traversal")
-        print("7. BFS traversal")
-        print("8. Check if there is a path from root to leaf")
-        print("9. Display the tree (requires Graphviz)")
-        print("0. Exit")
+        print("\n")
+        print("\n [q] Quit.")
+        print("\n [i] Insert a value.")
+        print("\n [s] Search for a value.")
+        print("\n [r] Remove a value. ")
+        print("\n Press 1 to print values in INORDER TRAVERSAL.")
+        print("\n Press 2 to print values in PREORDER TRAVERSAL.")
+        print("\n Press 3 to print values in POSTORDER TRAVERSAL.")
+        print("\n Press 4 to perform LEVEL ORDER TRAVERSAL.")
+        print("\n Press 5 to check if path exists from root to leaf node.")
+        print("\n")
+        print(" >>> CHOOSE AN OPTION <<<  >> ")
+        print("\n")
+        
+        choice = input(">>  ").lower()
 
-        choice = input("Enter your choice: ").strip()
-
-        if choice == "1":
-            try:
-                value = int(input("Enter value to insert: "))
-                root.insert(value)
-                print(f"{value} inserted.")
-            except ValueError:
-                print("Invalid input. Please enter an integer.")
-        elif choice == "2":
-            try:
-                value = int(input("Enter value to search: "))
-                found = root.search(value)
-                print(f"{value} found." if found else f"{value} not found.")
-            except ValueError:
-                print("Invalid input. Please enter an integer.")
-        elif choice == "3":
-            try:
-                value = int(input("Enter value to remove: "))
-                root = root.remove(value)
-                print(f"{value} removed.")
-            except ValueError:
-                print("Invalid input. Please enter an integer.")
-        elif choice == "4":
-            print("Inorder traversal:", root.inorder())
-        elif choice == "5":
-            print("Preorder traversal:", root.preorder())
-        elif choice == "6":
-            print("Postorder traversal:", root.postorder())
-        elif choice == "7":
-            print("BFS traversal:", root.bfs())
-        elif choice == "8":
-            print("Path exists." if root.has_path() else "No path exists.")
-        elif choice == "9":
-            root.display()
-        elif choice == "0":
-            print("Exiting...")
+        # QUIT
+        if choice == 'q':
             break
-        else:
-            print("Invalid choice. Please enter a number from 0 to 9.")
+        
+        # INSERT
+        elif choice == "i":
+            try:
+                val = int(input("\nEnter value to insert to BST:  >>  "))
+                tree.root = tree.insert(tree.root, val)
+                tree.draw("bst_tree")
+
+            except ValueError:
+                print("⚠️ Please enter a valid number.")
+
+        # SEARCH
+        elif choice == "s":
+            try:
+                val = int(input("\nEnter value to search:  >>  "))
+                result = tree.searchBST(tree.root, val)
+
+                if result:
+                    print("\n")
+                    print(f'Value {val} is FOUND in the tree.')
+                
+                else:
+                    print("\n")
+                    print(f'Value {val} is NOT FOUND in the tree.')
+
+            except ValueError:
+                print("⚠️ Please enter a valid number.")
+
+        # REMOVE
+        elif choice == "r":
+            try:
+                val = int(input("\nEnter value to delete.  >>  "))
+                tree.root, removed = tree.remove(tree.root, val)
+                tree.draw("bst_tree")
+
+                if removed:
+                    print(f"Value {val} is deleted succesfully from the tree ✅.")
+
+                else:
+                    print(f'Value {val} is NOT FOUND in the tree ❌.')
+
+            except ValueError:
+                print("⚠️ Please enter a valid number.")
+
+        # DFS
+        # inorder traversal
+        elif choice == "1":
+            print("\n")
+            print(tree.inorder(tree.root))
+
+        # preorder traversal
+        elif choice == "2":
+            print("\n")
+            print(tree.preorder(tree.root))
+
+        # post order traversal
+        elif choice == "3":
+            print("\n")
+            print(tree.postorder(tree.root))
+
+        # BFS
+        elif choice == "4":
+            print("\n")
+            tree.bfs(tree.root)
+
+
+
+        # Check if path exists to leaf node
+        elif choice == "5":
+            values = []
+            print("\n")
+            result = tree.canReachLeaf(tree.root, values)
+
+            if result:
+                print("\nThere is a path from root to leaf node:", values)
+            else:
+                print("\nThe is no way to get to leaf node.")
 
 
 if __name__ == "__main__":
-    # Create the root node with an initial value
-    try:
-        initial = int(input("Enter the root node value: "))
-        root = Node(initial)
-        main()
-    except ValueError:
-        print("Invalid root value. Please run the program again and enter an integer.")
+    main()
+
+
+
